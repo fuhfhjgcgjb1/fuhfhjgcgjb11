@@ -106,12 +106,11 @@ Tab:AddParagraph("你的注入器:"..identifyexecutor())
 Tab:AddParagraph("作者","？？")
 Tab:AddParagraph("勾十缝合脚本别骂😭")
 Tab:AddParagraph("更新","更新了UI之类的显示，比如设置移速会有提示")
-Tab:AddParagraph("儿童节快乐","六一快乐)
 
 Tab:AddButton ({
 	Name = "复制",
 	Callback = function ()
-	 setclipboard("？")
+	 setclipboard("？？")
 	 OrionLib:MakeNotification({
                     Name = "提示信息",
                     Content = "你已复制，请在粘贴板中查看",
