@@ -380,6 +380,18 @@ Tab:AddButton ({
 	 loadstring(game:HttpGet("https://github.com/DocYogurt/DOORS/raw/main/Loader.lua"))()
 	end
 })
+Tab:AddButton ({
+	Name = "AIBDOORS",
+	Callback = function ()
+	 loadstring(game:HttpGet("https://raw.githubusercontent.com/BINjiaobzx6/BINjiao/main/AIRDOORS%E6%B5%8B%E8%AF%95%E7%89%88.txt"))()
+	end
+})
+Tab:AddButton ({
+	Name = "微山doors",
+	Callback = function ()
+	 loadstring(game:HttpGet("https://raw.githubusercontent.com/weishanteam/Script/main/doors/WeiShan_Loader.lua"))()
+	end
+})
 local Section = Tab:AddSection({
 	Name = "模式"
 })
