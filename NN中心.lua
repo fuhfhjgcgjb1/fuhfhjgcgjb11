@@ -1,3 +1,8 @@
+--开了
+--不管你是谁，别他妈乱改我东西，不然你全家死妈，操你妈了个逼，你妈了个逼的，我操你妈你妈逼被我踹死了
+--是我好友可以改
+
+local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
  Notification:Notify( 
      {Title = "SAY", Description = "纯逢合别骂我"}, 
@@ -109,7 +114,7 @@ Tab:AddParagraph("更新","更新了UI之类的显示，比如设置移速会有
 Tab:AddButton ({
 	Name = "复制",
 	Callback = function ()
-	 setclipboard("？？")
+	 setclipboard("？")
 	 OrionLib:MakeNotification({
                     Name = "提示信息",
                     Content = "你已复制，请在粘贴板中查看",
