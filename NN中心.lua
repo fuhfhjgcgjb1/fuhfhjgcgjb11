@@ -110,12 +110,11 @@ Tab:AddParagraph("你的注入器:"..identifyexecutor())
 Tab:AddParagraph("作者","？？")
 Tab:AddParagraph("勾十缝合脚本别骂😭")
 Tab:AddParagraph("更新","更新了UI之类的显示，比如设置移速会有提示")
-Tab:AddParagraph("祝你们儿童节快乐")
 
 Tab:AddButton ({
 	Name = "复制",
 	Callback = function ()
-	 setclipboard("？？")
+	 setclipboard("？")
 	 OrionLib:MakeNotification({
                     Name = "提示信息",
                     Content = "你已复制，请在粘贴板中查看",
@@ -379,12 +378,6 @@ Tab:AddButton ({
 	Name = "NBDOORS(卡密NB)",
 	Callback = function ()
 	 loadstring(game:HttpGet("https://github.com/DocYogurt/DOORS/raw/main/Loader.lua"))()
-	end
-})
-Tab:AddButton ({
-	Name = "ALRDOORS",
-	Callback = function ()
-	 loadstring(game:HttpGet("https://raw.githubusercontent.com/BINjiaobzx6/BINjiao/main/AIRDOORS%E6%B5%8B%E8%AF%95%E7%89%88.txt"))()
 	end
 })
 local Section = Tab:AddSection({
