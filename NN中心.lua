@@ -114,7 +114,7 @@ Tab:AddParagraph("更新","更新了UI之类的显示，比如设置移速会有
 Tab:AddButton ({
 	Name = "复制",
 	Callback = function ()
-	 setclipboard("？")
+	 setclipboard("？？")
 	 OrionLib:MakeNotification({
                     Name = "提示信息",
                     Content = "你已复制，请在粘贴板中查看",
