@@ -1,7 +1,3 @@
---开了
---不管你是谁，别他妈乱改我东西，不然你全家死妈，操你妈了个逼，你妈了个逼的，我操你妈你妈逼被我踹死了
---是我好友可以改
-
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
  Notification:Notify( 
