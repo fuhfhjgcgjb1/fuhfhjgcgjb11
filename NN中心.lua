@@ -102,7 +102,7 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-Tab:AddParagraph("更新","伐木，破坏，nico")
+Tab:AddParagraph("更新","通用功能变多，rake，汽车大亨，doors，删除了一些不能用的东西")
 Tab:AddParagraph("云端更新","yee")
 Tab:AddParagraph("永久免费")
 Tab:AddParagraph("提示","脚本中心") 
