@@ -555,7 +555,7 @@ Tab:AddButton ({
 Tab:AddButton ({
 	Name = "好用模式(要卡密自己搞)",
 	Callback = function ()
-	 loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/DOORS-mode/main/ScripV2"))()
+	 loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/Script-Mode/main/V3/Main-Scipt"))()
 	end
 })
 Tab:AddButton ({
