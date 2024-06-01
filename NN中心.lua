@@ -95,7 +95,7 @@ OrionLib:MakeNotification({
                 
 Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
-local Window = OrionLib:MakeWindow({Name = "NN中心1.1", HidePremium = false, SaveConfig =true,IntroText="NN中心1.1", ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "NN中心1.2", HidePremium = false, SaveConfig =true,IntroText="NN中心1.1", ConfigFolder = "OrionTest"})
 local Tab = Window:MakeTab({
 	Name = "主页",
 	Icon = "rbxassetid://4483345998",
@@ -215,9 +215,34 @@ Light.LightingChanged:Connect(dofullbright)
 	end
 })
 Tab:AddButton ({
-	Name = "飞行v3",
+	Name = "回满血(部分服务器不可用",
 	Callback = function ()
-	 loadstring(game:HttpGet(("https://raw.githubusercontent.com/UWUBeiFeng/Scripts/main/FlyGUIV3.lua"), true))()
+	 loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/nengliangtiao"))()
+	end
+})
+Tab:AddButton ({
+	Name = "自杀",
+	Callback = function ()
+	 game.Players.LocalPlayer.Character.Humanoid.Health=0
+HumanDied = true
+	end
+})
+Tab:AddButton ({
+	Name = "伪名字说话",
+	Callback = function ()
+	 loadstring(game:HttpGet(('https://pastefy.ga/zCFEwaYq/raw'),true))()
+	end
+})
+Tab:AddButton ({
+	Name = "高画质",
+	Callback = function ()
+	 loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
+	end
+})
+Tab:AddButton ({
+	Name = "飞行v3(修复",
+	Callback = function ()
+	 loadstring(game:HttpGet('https://pastebin.com/raw/U27yQRxS'))()
 	end
 })
 Tab:AddButton ({
@@ -230,6 +255,112 @@ Tab:AddButton ({
 	Name = "锁头",
 	Callback = function ()
 	 loadstring(game:HttpGet("https://pastebin.com/raw/6RQGbFqD"))()
+	end
+})
+Tab:AddButton ({
+	Name = "锁头(队伍检测",
+	Callback = function ()
+	 _G.AimbotEnabled = Value
+
+		local Camera = workspace.CurrentCamera
+		local Players = game:GetService("Players")
+		local RunService = game:GetService("RunService")
+		local UserInputService = game:GetService("UserInputService")
+		local TweenService = game:GetService("TweenService")
+		local LocalPlayer = Players.LocalPlayer
+		local Holding = false
+
+		_G.TeamCheck = true
+		_G.AimPart = "Head"
+		_G.Sensitivity = 0
+
+		_G.CircleSides = 64
+		_G.CircleColor = Color3.fromRGB(255, 255, 255)
+		_G.CircleTransparency = 0.7
+		_G.CircleRadius = 80
+		_G.CircleFilled = false
+		_G.CircleVisible = false
+		_G.CircleThickness = 0
+
+		local FOVCircle = Drawing.new("Circle")
+		FOVCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
+		FOVCircle.Radius = _G.CircleRadius
+		FOVCircle.Filled = _G.CircleFilled
+		FOVCircle.Color = _G.CircleColor
+		FOVCircle.Visible = _G.CircleVisible
+		FOVCircle.Radius = _G.CircleRadius
+		FOVCircle.Transparency = _G.CircleTransparency
+		FOVCircle.NumSides = _G.CircleSides
+		FOVCircle.Thickness = _G.CircleThickness
+
+		local function GetClosestPlayer()
+			local MaximumDistance = _G.CircleRadius
+			local Target = nil
+
+			for _, v in next, Players:GetPlayers() do
+				if v.Name ~= LocalPlayer.Name then
+					if _G.TeamCheck == true then
+						if v.Team ~= LocalPlayer.Team then
+							if v.Character ~= nil then
+								if v.Character:FindFirstChild("HumanoidRootPart") ~= nil then
+									if v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("Humanoid").Health ~= 0 then
+										local ScreenPoint = Camera:WorldToScreenPoint(v.Character:WaitForChild("HumanoidRootPart", math.huge).Position)
+										local VectorDistance = (Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y) - Vector2.new(ScreenPoint.X, ScreenPoint.Y)).Magnitude
+
+										if VectorDistance < MaximumDistance then
+											Target = v
+										end
+									end
+								end
+							end
+						end
+					else
+						if v.Character ~= nil then
+							if v.Character:FindFirstChild("HumanoidRootPart") ~= nil then
+								if v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("Humanoid").Health ~= 0 then
+									local ScreenPoint = Camera:WorldToScreenPoint(v.Character:WaitForChild("HumanoidRootPart", math.huge).Position)
+									local VectorDistance = (Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y) - Vector2.new(ScreenPoint.X, ScreenPoint.Y)).Magnitude
+
+									if VectorDistance < MaximumDistance then
+										Target = v
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+
+			return Target
+		end
+
+		UserInputService.InputBegan:Connect(function(Input)
+			if Input.UserInputType == Enum.UserInputType.MouseButton2 then
+				Holding = true
+			end
+		end)
+
+		UserInputService.InputEnded:Connect(function(Input)
+			if Input.UserInputType == Enum.UserInputType.MouseButton2 then
+				Holding = false
+			end
+		end)
+
+		RunService.RenderStepped:Connect(function()
+			FOVCircle.Position = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
+			FOVCircle.Radius = _G.CircleRadius
+			FOVCircle.Filled = _G.CircleFilled
+			FOVCircle.Color = _G.CircleColor
+			FOVCircle.Visible = _G.CircleVisible
+			FOVCircle.Radius = _G.CircleRadius
+			FOVCircle.Transparency = _G.CircleTransparency
+			FOVCircle.NumSides = _G.CircleSides
+			FOVCircle.Thickness = _G.CircleThickness
+
+			if Holding == true and _G.AimbotEnabled == true then
+				TweenService:Create(Camera, TweenInfo.new(_G.Sensitivity, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {CFrame = CFrame.new(Camera.CFrame.Position, GetClosestPlayer().Character[_G.AimPart].Position)}):Play()
+			end
+		end)
 	end
 })
 Tab:AddButton({
@@ -349,12 +480,47 @@ Tab:AddButton({
 mouse = game.Players.LocalPlayer:GetMouse() tool = Instance.new("Tool") tool.RequiresHandle = false tool.Name = "工具 点击传送" tool.Activated:connect(function() local pos = mouse.Hit+Vector3.new(0,2.5,0) pos = CFrame.new(pos.X,pos.Y,pos.Z) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos end) tool.Parent = game.Players.LocalPlayer.Backpack
 	end
 })
+Tab:AddButton ({
+	Name = "动作",
+	Callback = function ()
+	 loadstring(game:HttpGet("https://pastebin.com/raw/Zj4NnKs6"))()
+	end
+})
+local Tab = Window:MakeTab({
+	Name = "rake",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton ({
+	Name = "超好用建议搭配第二个用",
+	Callback = function ()
+	 loadstring(game:HttpGet("https://pastebin.com/raw/ikY8F7gv"))()
+	end
+})
+Tab:AddButton ({
+	Name = "第二个",
+	Callback = function ()
+	 loadstring(game:HttpGet("https://pastebin.com/raw/jFn0k6Gz"))()
+	end
+})
+Tab:AddButton ({
+	Name = "3",
+	Callback = function ()
+	 loadstring(game:HttpGet("agggg"))()
+	end
+})
 local Tab = Window:MakeTab({
 	Name = "doors",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
+Tab:AddButton ({
+	Name = "陈",
+	Callback = function ()
+	 loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\89\83\108\111\110\47\82\65\87\45\46\46\97\45\115\99\114\105\112\116\47\109\97\105\110\47\37\69\57\37\57\57\37\56\56\68\79\79\82\83\50\46\48\77\79\79\78\37\69\54\37\66\55\37\66\55\37\69\54\37\66\55\37\56\54\34\41\41\40\41")()
+	end
+})
 Tab:AddButton ({
 	Name = "MSHUB",
 	Callback = function ()
@@ -381,7 +547,7 @@ Tab:AddButton ({
 	end
 })
 Tab:AddButton ({
-	Name = "AIBDOORS",
+	Name = "AIRDOORS",
 	Callback = function ()
 	 loadstring(game:HttpGet("https://raw.githubusercontent.com/BINjiaobzx6/BINjiao/main/AIRDOORS%E6%B5%8B%E8%AF%95%E7%89%88.txt"))()
 	end
@@ -410,7 +576,7 @@ Tab:AddButton ({
 Tab:AddButton ({
 	Name = "好用模式(要卡密自己搞)",
 	Callback = function ()
-	 loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/DOORS-mode/main/ScripV2"))()
+	 raw.githubusercontent.com/munciseek/Script-Mode/main/V3/Main-Scipt"))()
 	end
 })
 Tab:AddButton ({
