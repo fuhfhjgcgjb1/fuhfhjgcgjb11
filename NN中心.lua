@@ -1,7 +1,3 @@
---开了
---不管你是谁，别他妈乱改我东西，不然你全家死妈，操你妈了个逼，你妈了个逼的，我操你妈你妈逼被我踹死了
---是我好友可以改
-
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
  Notification:Notify( 
@@ -13,20 +9,11 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
  local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
  Notification:Notify( 
-     {Title = "原作者", Description = "BY ghgj"}, 
+     {Title = "原作者", Description = "by:ghgj"}, 
      {OutlineColor = Color3.fromRGB(155, 80, 80),Time = 3, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=17240832325", ImageColor = Color3.fromRGB(255, 255, 255)} 
  )
- local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
- local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
-
- wait(1) 
- Notification:Notify( 
-     {Title = "爱", Description = "爱你"}, 
-     {OutlineColor = Color3.fromRGB(155, 80, 80),Time = 3, Type = "image"}, 
-     {Image = "http://www.roblox.com/asset/?id=17240832325", ImageColor = Color3.fromRGB(255, 255, 255)} 
- )
- wait(3)
+ wait(2 )
 
 local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/VeaMSRZK"))()
 local LBLG = Instance.new("ScreenGui", getParent)
@@ -95,7 +82,7 @@ OrionLib:MakeNotification({
                 
 Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
-local Window = OrionLib:MakeWindow({Name = "NN中心1.2", HidePremium = false, SaveConfig =true,IntroText="NN中心1.1", ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "NN中心1.2", HidePremium = false, SaveConfig =true,IntroText="NN中心1.2", ConfigFolder = "OrionTest"})
 local Tab = Window:MakeTab({
 	Name = "主页",
 	Icon = "rbxassetid://4483345998",
@@ -108,13 +95,12 @@ Tab:AddParagraph("永久免费")
 Tab:AddParagraph("提示","脚本中心") 
 Tab:AddParagraph("你的注入器:"..identifyexecutor())
 Tab:AddParagraph("作者","？？")
-Tab:AddParagraph("勾十缝合脚本别骂😭")
-Tab:AddParagraph("更新","更新了UI之类的显示，比如设置移速会有提示")
+Tab:AddParagraph("勾十缝合脚本别骂")
 
 Tab:AddButton ({
 	Name = "复制",
 	Callback = function ()
-	 setclipboard("？")
+	 setclipboard("没有东西")
 	 OrionLib:MakeNotification({
                     Name = "提示信息",
                     Content = "你已复制，请在粘贴板中查看",
@@ -198,6 +184,7 @@ Tab:AddTextbox({
                 })
 	end
 })
+
 Tab:AddButton ({
 	Name = "高亮",
 	Callback = function ()
@@ -214,24 +201,24 @@ dofullbright()
 Light.LightingChanged:Connect(dofullbright)
 	end
 })
-Tab:AddButton ({
-	Name = "回满血(部分服务器不可用",
-	Callback = function ()
-	 loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/nengliangtiao"))()
-	end
+Tab:AddButton({
+  Name = "回满血(部分服务器不可用",
+  Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/nengliangtiao"))()
+  end
 })
-Tab:AddButton ({
-	Name = "自杀",
-	Callback = function ()
-	 game.Players.LocalPlayer.Character.Humanoid.Health=0
+Tab:AddButton({
+    Name="自杀",
+    Callback=function()
+        game.Players.LocalPlayer.Character.Humanoid.Health=0
 HumanDied = true
-	end
+    end
 })
-Tab:AddButton ({
-	Name = "伪名字说话",
-	Callback = function ()
-	 loadstring(game:HttpGet(('https://pastefy.ga/zCFEwaYq/raw'),true))()
-	end
+Tab:AddButton({
+	Name = "伪装名字说话",
+	Callback = function()
+loadstring(game:HttpGet(('https://pastefy.ga/zCFEwaYq/raw'),true))()
+	end 
 })
 Tab:AddButton ({
 	Name = "高画质",
@@ -260,7 +247,7 @@ Tab:AddButton ({
 Tab:AddButton ({
 	Name = "锁头(队伍检测",
 	Callback = function ()
-	 _G.AimbotEnabled = Value
+	_G.AimbotEnabled = Value
 
 		local Camera = workspace.CurrentCamera
 		local Players = game:GetService("Players")
@@ -361,7 +348,7 @@ Tab:AddButton ({
 				TweenService:Create(Camera, TweenInfo.new(_G.Sensitivity, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {CFrame = CFrame.new(Camera.CFrame.Position, GetClosestPlayer().Character[_G.AimPart].Position)}):Play()
 			end
 		end)
-	end
+	end    
 })
 Tab:AddButton({
 	Name = "无限跳跃",
@@ -480,11 +467,11 @@ Tab:AddButton({
 mouse = game.Players.LocalPlayer:GetMouse() tool = Instance.new("Tool") tool.RequiresHandle = false tool.Name = "工具 点击传送" tool.Activated:connect(function() local pos = mouse.Hit+Vector3.new(0,2.5,0) pos = CFrame.new(pos.X,pos.Y,pos.Z) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos end) tool.Parent = game.Players.LocalPlayer.Backpack
 	end
 })
-Tab:AddButton ({
-	Name = "动作",
-	Callback = function ()
-	 loadstring(game:HttpGet("https://pastebin.com/raw/Zj4NnKs6"))()
-	end
+Tab:AddButton({
+    Name = "动作",
+    Callback = function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/Zj4NnKs6"))()
+    end
 })
 local Tab = Window:MakeTab({
 	Name = "rake",
@@ -514,12 +501,11 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-
-Tab:AddButton ({
-	Name = "陈",
-	Callback = function ()
-	 loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\89\83\108\111\110\47\82\65\87\45\46\46\97\45\115\99\114\105\112\116\47\109\97\105\110\47\37\69\57\37\57\57\37\56\56\68\79\79\82\83\50\46\48\77\79\79\78\37\69\54\37\66\55\37\66\55\37\69\54\37\66\55\37\56\54\34\41\41\40\41")()
-	end
+Tab:AddButton({
+  Name = "陈",
+  Callback = function()
+loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\89\83\108\111\110\47\82\65\87\45\46\46\97\45\115\99\114\105\112\116\47\109\97\105\110\47\37\69\57\37\57\57\37\56\56\68\79\79\82\83\50\46\48\77\79\79\78\37\69\54\37\66\55\37\66\55\37\69\54\37\66\55\37\56\54\34\41\41\40\41")()
+    end
 })
 Tab:AddButton ({
 	Name = "MSHUB",
@@ -527,7 +513,6 @@ Tab:AddButton ({
 	 loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/MSDOORS/main/MSHUB_Loader.lua"),true))()
 	end
 })
-
 Tab:AddButton ({
 	Name = "键盘脚本",
 	Callback = function ()
@@ -546,20 +531,14 @@ Tab:AddButton ({
 	 loadstring(game:HttpGet("https://github.com/DocYogurt/DOORS/raw/main/Loader.lua"))()
 	end
 })
-Tab:AddButton ({
-	Name = "AIRDOORS",
-	Callback = function ()
-	 loadstring(game:HttpGet("https://raw.githubusercontent.com/BINjiaobzx6/BINjiao/main/AIRDOORS%E6%B5%8B%E8%AF%95%E7%89%88.txt"))()
-	end
-})
-Tab:AddButton ({
-	Name = "微山doors",
-	Callback = function ()
-	 loadstring(game:HttpGet("https://raw.githubusercontent.com/weishanteam/Script/main/doors/WeiShan_Loader.lua"))()
-	end
-})
 local Section = Tab:AddSection({
 	Name = "模式"
+})
+Tab:AddButton ({
+	Name = "模式整合更新(特别好用，推荐使用这个特别好用)",
+	Callback = function ()
+	 loadstring(game:HttpGet("https://raw.githubusercontent.com/Drop56796/if/main/if.lua"))()
+	end
 })
 Tab:AddButton ({
 	Name = "模式整合要卡密特别推荐(点击获得卡密链接)",
@@ -576,7 +555,7 @@ Tab:AddButton ({
 Tab:AddButton ({
 	Name = "好用模式(要卡密自己搞)",
 	Callback = function ()
-	 raw.githubusercontent.com/munciseek/Script-Mode/main/V3/Main-Scipt"))()
+	 loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/DOORS-mode/main/ScripV2"))()
 	end
 })
 Tab:AddButton ({
@@ -1640,7 +1619,7 @@ local Tab = Window:MakeTab({
 })
 Tab:AddButton({
 
-  Name = "1",
+  Name = "好用",
 
   Callback = function ()
 
@@ -1873,3 +1852,40 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CloudX-ScriptsWane/Sc
   end
 })
 local Section = Tab:AddSection({	Name = "传送..."})                                      Tab:AddButton({Name = "火",      Callback = function()              game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1615.8934326171875, 622.9998779296875, 1086.1234130859375)               end                                    })                                                                              Tab:AddButton({                  Name = "画室",                 Callback = function()                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5241.55810546875, -166.00003051757812, 709.5656127929688)                end                                    })                                                                Tab:AddButton({                  Name = "幻影",              Callback = function()             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-56.28166198730469, -213.13137817382812, -1357.8018798828125)              end                                   })                                                                Tab:AddButton({                 Name = "木材反斗城",            Callback = function()             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(252.31906127929688, 2.9999992847442627, 56.9854850769043)                  end                                   })                                                                               Tab:AddButton({                 Name = "冰木",                  Callback = function()              game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1522.8817138671875, 412.3657531738281, 3277.71826171875)                     end                                    })                                                                Tab:AddButton({                  Name = "椰子",                Callback = function()              game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2615.709228515625, -5.899986743927002, -21.30138397216797)                  end                                     })
+
+local Tab = Window:MakeTab({
+	Name = "自然灾害模拟器",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+  Name = "指令",
+  Callback = function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+      end
+})
+
+Tab:AddButton({
+  Name = "2",
+  Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/LoadstringUjHI6RQpz2o8", true))()
+  end
+})
+local Tab = Window:MakeTab({
+	Name = "汽车经销大亨",
+	Icon = "rbxassetid://7733779610",
+	PremiumOnly = false
+})
+Tab:AddButton({
+  Name = "好用",
+  Callback = function()
+loadstring(game:HttpGet("https://pastefy.app/5o594Q0i/raw"))()
+  end
+})
+Tab:AddButton({
+  Name = "不知道",
+  Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/03sAlt/BlueLockSeason2/main/README.md"))()
+  end
+})
